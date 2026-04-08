@@ -1,0 +1,92 @@
+[
+  {
+    "chunk_size": 500,
+    "chunk_overlap": 100,
+    "top_k": 3,
+    "num_chunks": 1008,
+    "accuracy": 0.5833333333333334,
+    "faithfulness": 0.4153846153846154,
+    "relevance": 0.75250343978405,
+    "tokens_used": 5966
+  },
+  {
+    "chunk_size": 500,
+    "chunk_overlap": 100,
+    "top_k": 5,
+    "num_chunks": 1008,
+    "accuracy": 0.6666666666666666,
+    "faithfulness": 0.6005952380952381,
+    "relevance": 0.7429123332103093,
+    "tokens_used": 9185
+  },
+  {
+    "chunk_size": 500,
+    "chunk_overlap": 100,
+    "top_k": 8,
+    "num_chunks": 1008,
+    "accuracy": 0.75,
+    "faithfulness": 0.5943452380952381,
+    "relevance": 0.733605203529199,
+    "tokens_used": 13500
+  },
+  {
+    "chunk_size": 800,
+    "chunk_overlap": 200,
+    "top_k": 3,
+    "num_chunks": 721,
+    "accuracy": 0.8333333333333334,
+    "faithfulness": 0.6195436507936508,
+    "relevance": 0.7441877524058024,
+    "tokens_used": 9313
+  },
+  {
+    "chunk_size": 800,
+    "chunk_overlap": 200,
+    "top_k": 5,
+    "num_chunks": 721,
+    "accuracy": 0.8333333333333334,
+    "faithfulness": 0.5946428571428571,
+    "relevance": 0.7354622781276703,
+    "tokens_used": 14565
+  },
+  {
+    "chunk_size": 800,
+    "chunk_overlap": 200,
+    "top_k": 8,
+    "num_chunks": 721,
+    "accuracy": 0.9166666666666666,
+    "faithfulness": 0.5588624338624338,
+    "relevance": 0.7253755759447813,
+    "tokens_used": 22406
+  },
+  {
+    "chunk_size": 1200,
+    "chunk_overlap": 300,
+    "top_k": 3,
+    "num_chunks": 477,
+    "accuracy": 0.8333333333333334,
+    "faithfulness": 0.49384920634920637,
+    "relevance": 0.7371513578626844,
+    "tokens_used": 12863
+  },
+  {
+    "chunk_size": 1200,
+    "chunk_overlap": 300,
+    "top_k": 5,
+    "num_chunks": 477,
+    "accuracy": 1.0,
+    "faithfulness": 0.5184348739495798,
+    "relevance": 0.7278893242279688,
+    "tokens_used": 20888
+  },
+  {
+    "chunk_size": 1200,
+    "chunk_overlap": 300,
+    "top_k": 8,
+    "num_chunks": 477,
+    "accuracy": 1.0,
+    "faithfulness": 0.5785714285714286,
+    "relevance": 0.7177243661135435,
+    "tokens_used": 31565
+  }
+]

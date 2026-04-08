@@ -1,0 +1,86 @@
+[
+  {
+    "question": "What was Apple's total net sales in fiscal year 2024?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "Apple's total net sales in fiscal year 2024 were $391,035 million [Source 1, Page 38].",
+    "hybrid_answer": "Apple's total net sales in fiscal year 2024 were $391,035 million [Source 1, Page 38]."
+  },
+  {
+    "question": "How much did Apple spend on R&D in 2024?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "Apple spent $31,370 million on research and development (R&D) in 2024, which represents a 5% increase compared to 2023, when the expenditure was $29,915 million [Source 1, Page 27].",
+    "hybrid_answer": "Apple spent $31,370 million on research and development (R&D) in 2024, which represents a 5% increase compared to 2023, when the expenditure was $29,915 million [Source 1, Page 27]."
+  },
+  {
+    "question": "What was Apple's net income in 2024?",
+    "dense_hit": false,
+    "hybrid_hit": true,
+    "dense_answer": "The provided context does not include specific information regarding Apple's net income for 2024. Therefore, I cannot provide an answer based on the available data.",
+    "hybrid_answer": "Apple's net income in 2024 was $93,736 million [Source 1, Page 33]."
+  },
+  {
+    "question": "What is Apple's total number of employees?",
+    "dense_hit": false,
+    "hybrid_hit": false,
+    "dense_answer": "The provided context does not contain any information regarding Apple's total number of employees. Therefore, I cannot provide an answer to your question.",
+    "hybrid_answer": "The provided context does not contain any information regarding Apple's total number of employees. Therefore, I cannot provide an answer to your question."
+  },
+  {
+    "question": "Who is Apple's CEO?",
+    "dense_hit": true,
+    "hybrid_hit": false,
+    "dense_answer": "Apple's CEO is Timothy D. Cook, as indicated in the document where he is listed as signing the report on November 1, 2024 [Source 2, Page 118].",
+    "hybrid_answer": "The provided context does not contain any information regarding Apple's CEO. Therefore, I cannot answer your question based on the available information."
+  },
+  {
+    "question": "What was Apple's gross margin in 2024?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "Apple's gross margin in 2024 was $180,683 million [Source 2, Page 32].",
+    "hybrid_answer": "Apple's gross margin in 2024 was $180,683 million [Source 1, Page 32]."
+  },
+  {
+    "question": "How much cash did Apple return to shareholders in 2024?",
+    "dense_hit": true,
+    "hybrid_hit": false,
+    "dense_answer": "In 2024, Apple returned a total of $56,950 million in dividends and dividend equivalents declared per share, which amounted to $0.98 per share [Source 4]. Additionally, the company repurchased 499,372",
+    "hybrid_answer": "The provided context does not contain specific information regarding the amount of cash Apple returned to shareholders in 2024. Therefore, I cannot provide an answer based on the available data."
+  },
+  {
+    "question": "What are Apple's main product categories?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "Apple's main product categories include:\n\n1. **iPhone** - A line of smartphones based on the iOS operating system, which includes models such as iPhone 16 Pro, iPhone 16, iPhone 15, iPhone 14, and iPh",
+    "hybrid_answer": "Apple's main product categories include smartphones, personal computers, tablets, wearables, and accessories. Specifically, the iPhone is part of the smartphone category, while the Mac line represents"
+  },
+  {
+    "question": "In which countries does Apple have retail stores?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "The provided context does not contain specific information about the countries where Apple has retail stores. Therefore, I cannot provide an answer based on the available information.",
+    "hybrid_answer": "The provided context does not specify the exact countries where Apple has retail stores. It mentions that the Company manages its business primarily on a geographic basis, with reportable segments inc"
+  },
+  {
+    "question": "What was iPhone revenue in 2024?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "iPhone revenue in 2024 was $201,183 million, which represented a relatively flat performance compared to 2023, where it was $200,583 million [Source 1, Page 26].",
+    "hybrid_answer": "iPhone revenue in 2024 was $201,183 million, which was relatively flat compared to the previous year, 2023, where it was $200,583 million [Source 4]."
+  },
+  {
+    "question": "What was Services revenue in 2024?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "Services revenue in 2024 was $96,169 million, which represents a 13% increase compared to 2023's revenue of $85,200 million [Source 3, Page 26].",
+    "hybrid_answer": "Services revenue in 2024 was $96,169 million, which represents a 13% increase compared to 2023's revenue of $85,200 million [Source 5]."
+  },
+  {
+    "question": "What credit rating does Apple have?",
+    "dense_hit": true,
+    "hybrid_hit": true,
+    "dense_answer": "The provided context does not contain any information regarding Apple Inc.'s credit rating. Therefore, I cannot provide an answer to your question based on the available data.",
+    "hybrid_answer": "The provided context does not contain any information regarding Apple's credit rating. Therefore, I cannot provide an answer based on the available data."
+  }
+]

@@ -1,0 +1,455 @@
+{
+  "overall_accuracy": 0.8333333333333334,
+  "numerical_accuracy": 0.75,
+  "factual_accuracy": 1.0,
+  "avg_faithfulness": 0.6005621693121693,
+  "avg_relevance": 0.7354622781276703,
+  "total_questions": 12,
+  "total_tokens": 14617,
+  "details": [
+    {
+      "question": "What was Apple's total net sales in fiscal year 2024?",
+      "category": "numerical",
+      "gold_answer": "$391,035 million",
+      "predicted_answer": "Apple's total net sales in fiscal year 2024 were $391,035 million [Source 1, Page 38; Source 4, Page 32].",
+      "keyword_hit": true,
+      "faithfulness": 0.3333333333333333,
+      "relevance": 0.8176350116729736,
+      "tokens_used": 1479,
+      "sources": [
+        {
+          "page": 38,
+          "distance": 0.15695005655288696,
+          "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+        },
+        {
+          "page": 26,
+          "distance": 0.1610490083694458,
+          "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+        },
+        {
+          "page": 26,
+          "distance": 0.17299884557724,
+          "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+        },
+        {
+          "page": 32,
+          "distance": 0.2007628083229065,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+        },
+        {
+          "page": 50,
+          "distance": 0.2200642228126526,
+          "text": "The following tables show net sales for 2024, 2023 and 2022 and long-lived assets as of September 28, 2024 and September 30, 2023 for countries that\nindividually accounted for 10% or more of the respe"
+        }
+      ]
+    },
+    {
+      "question": "How much did Apple spend on R&D in 2024?",
+      "category": "numerical",
+      "gold_answer": "$31,370 million",
+      "predicted_answer": "Apple spent $31,370 million on research and development (R&D) in 2024, which represents a 5% increase compared to 2023, when R&D expenses were $29,915 million [Source 1, Page 27].",
+      "keyword_hit": true,
+      "faithfulness": 0.5714285714285714,
+      "relevance": 0.7520296931266784,
+      "tokens_used": 1254,
+      "sources": [
+        {
+          "page": 27,
+          "distance": 0.22275310754776,
+          "text": "Operating Expenses\nOperating expenses for 2024, 2023 and 2022 were as follows (dollars in millions):\n2024\nChange\n2023\nChange\n2022\nResearch and development\n$\n31,370 \n5 %\n$\n29,915 \n14 %\n$\n26,251 \nPercen"
+        },
+        {
+          "page": 23,
+          "distance": 0.2466869354248047,
+          "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+        },
+        {
+          "page": 24,
+          "distance": 0.2519723176956177,
+          "text": "•\nApple Intelligence™, a personal intelligence system that uses generative models.\nFourth Quarter 2024:\n•\niPhone 16, iPhone 16 Plus, iPhone 16 Pro and iPhone 16 Pro Max;\n•\nApple Watch Series 10; and\n•"
+        },
+        {
+          "page": 32,
+          "distance": 0.25622886419296265,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+        },
+        {
+          "page": 26,
+          "distance": 0.26221030950546265,
+          "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+        }
+      ]
+    },
+    {
+      "question": "What was Apple's net income in 2024?",
+      "category": "numerical",
+      "gold_answer": "$93,736 million",
+      "predicted_answer": "The provided context does not include specific information about Apple's net income for 2024. Therefore, I cannot provide an answer based on the available data.",
+      "keyword_hit": false,
+      "faithfulness": 0.5,
+      "relevance": 0.785504162311554,
+      "tokens_used": 1333,
+      "sources": [
+        {
+          "page": 23,
+          "distance": 0.19462954998016357,
+          "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+        },
+        {
+          "page": 26,
+          "distance": 0.21440792083740234,
+          "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+        },
+        {
+          "page": 38,
+          "distance": 0.2166920304298401,
+          "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+        },
+        {
+          "page": 26,
+          "distance": 0.22160083055496216,
+          "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+        },
+        {
+          "page": 32,
+          "distance": 0.22514885663986206,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+        }
+      ]
+    },
+    {
+      "question": "What is Apple's total number of employees?",
+      "category": "numerical",
+      "gold_answer": "Approximately 164,000",
+      "predicted_answer": "The provided context does not contain any information regarding Apple's total number of employees. Therefore, I cannot provide an answer to your question.",
+      "keyword_hit": false,
+      "faithfulness": 1.0,
+      "relevance": 0.698646855354309,
+      "tokens_used": 1225,
+      "sources": [
+        {
+          "page": 32,
+          "distance": 0.29253917932510376,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+        },
+        {
+          "page": 38,
+          "distance": 0.29380249977111816,
+          "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+        },
+        {
+          "page": 34,
+          "distance": 0.29814422130584717,
+          "text": "and 15,550,061 shares issued and outstanding, respectively\n83,276 \n73,812 \nAccumulated deficit\n(19,154)\n(214)\nAccumulated other comprehensive loss\n(7,172)\n(11,452)\nTotal shareholders’ equity\n56,950 \n6"
+        },
+        {
+          "page": 32,
+          "distance": 0.3105120062828064,
+          "text": "Selling, general and administrative\n26,097 \n24,932 \n25,094 \nTotal operating expenses\n57,467 \n54,847 \n51,345 \nOperating income\n123,216 \n114,301 \n119,437 \nOther income/(expense), net\n269 \n(565)\n(334)\nIn"
+        },
+        {
+          "page": 46,
+          "distance": 0.3117678165435791,
+          "text": "hedging.\nThe future principal payments for the Company’s Notes as of September 28, 2024, are as follows (in millions):\n2025\n$\n10,930 \n2026\n12,342 \n2027\n9,936 \n2028\n7,800 \n2029\n5,153 \nThereafter\n51,180"
+        }
+      ]
+    },
+    {
+      "question": "Who is Apple's CEO?",
+      "category": "factual",
+      "gold_answer": "Tim Cook",
+      "predicted_answer": "Apple's CEO is Timothy D. Cook, as indicated in the document where he is listed as signing the report on November 1, 2024 [Source 2, Page 118].",
+      "keyword_hit": true,
+      "faithfulness": 0.6,
+      "relevance": 0.6318266868591309,
+      "tokens_used": 1122,
+      "sources": [
+        {
+          "page": 60,
+          "distance": 0.33207184076309204,
+          "text": "Director and Chair of the Board\nNovember 1, 2024\nARTHUR D. LEVINSON\n/s/ Monica Lozano\nDirector\nNovember 1, 2024\nMONICA LOZANO\n/s/ Ronald D. Sugar\nDirector\nNovember 1, 2024\nRONALD D. SUGAR\n/s/ Susan L."
+        },
+        {
+          "page": 118,
+          "distance": 0.36948996782302856,
+          "text": "of operations of Apple Inc. at the dates and for the periods indicated.\nDate: November 1, 2024\nBy:\n/s/ Timothy D. Cook\nTimothy D. Cook\nChief Executive Officer\nI, Luca Maestri, certify, as of the date "
+        },
+        {
+          "page": 118,
+          "distance": 0.37095946073532104,
+          "text": "operations of Apple Inc. at the dates and for the periods indicated.\nDate: November 1, 2024\nBy:\n/s/ Luca Maestri\nLuca Maestri\nSenior Vice President,\nChief Financial Officer\nA signed original of this w"
+        },
+        {
+          "page": 32,
+          "distance": 0.38364678621292114,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+        },
+        {
+          "page": 4,
+          "distance": 0.3846985101699829,
+          "text": "“Company” and “Apple” as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.\nPART I\nItem 1.    Business\nCompany Background\nThe Company designs, ma"
+        }
+      ]
+    },
+    {
+      "question": "What was Apple's gross margin in 2024?",
+      "category": "numerical",
+      "gold_answer": "46.2%",
+      "predicted_answer": "Apple's gross margin in 2024 was $180,683 million [Source 2, Page 32].",
+      "keyword_hit": true,
+      "faithfulness": 0.25,
+      "relevance": 0.7663257598876954,
+      "tokens_used": 1326,
+      "sources": [
+        {
+          "page": 23,
+          "distance": 0.2070116400718689,
+          "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+        },
+        {
+          "page": 32,
+          "distance": 0.23219704627990723,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+        },
+        {
+          "page": 38,
+          "distance": 0.23832440376281738,
+          "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+        },
+        {
+          "page": 26,
+          "distance": 0.24110043048858643,
+          "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+        },
+        {
+          "page": 26,
+          "distance": 0.2497376799583435,
+          "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+        }
+      ]
+    },
+    {
+      "question": "How much cash did Apple return to shareholders in 2024?",
+      "category": "numerical",
+      "gold_answer": "Over $100 billion through dividends and share repurchases",
+      "predicted_answer": "In 2024, Apple returned a total of $56,950 million in dividends and dividend equivalents declared per share or RSU, along with $20.9 billion utilized from its share repurchase program. Therefore, the total cash returned to shareholders in 2024 was approximately $77.85 billion ($56.95 billion in dividends + $20.9 billion in share repurchases) [Source 4][Source 1].",
+      "keyword_hit": true,
+      "faithfulness": 0.5555555555555556,
+      "relevance": 0.8044130563735962,
+      "tokens_used": 1136,
+      "sources": [
+        {
+          "page": 22,
+          "distance": 0.16559559106826782,
+          "text": "$\n222.86 \n33,653 \nTotal\n112,260 \n$\n89,074 \n(1)\nAs of September 28, 2024, the Company was authorized by the Board to purchase up to $110 billion of the Company’s common stock under a share repurchase\np"
+        },
+        {
+          "page": 23,
+          "distance": 0.18960708379745483,
+          "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+        },
+        {
+          "page": 36,
+          "distance": 0.20547270774841309,
+          "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF CASH FLOWS\n(In millions)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSeptember 24,\n2022\nCash, cash equivalents, and restricted cash and cash equivalents, be"
+        },
+        {
+          "page": 35,
+          "distance": 0.20758932828903198,
+          "text": "$\n56,950 \n$\n62,146 \n$\n50,672 \nDividends and dividend equivalents declared per share or RSU\n$\n0.98 \n$\n0.94 \n$\n0.90 \nSee accompanying Notes to Consolidated Financial Statements.\nApple Inc. | 2024 Form 1"
+        },
+        {
+          "page": 47,
+          "distance": 0.20967000722885132,
+          "text": "Shares of Common Stock\nThe following table shows the changes in shares of common stock for 2024, 2023 and 2022 (in thousands):\n2024\n2023\n2022\nCommon stock outstanding, beginning balances\n15,550,061 \n1"
+        }
+      ]
+    },
+    {
+      "question": "What are Apple's main product categories?",
+      "category": "factual",
+      "gold_answer": "iPhone, Mac, iPad, Wearables/Home/Accessories, Services",
+      "predicted_answer": "Apple's main product categories include:\n\n1. **iPhone** - A line of smartphones based on the iOS operating system, which includes models such as iPhone 16 Pro, iPhone 16, iPhone 15, iPhone 14, and iPhone SE [Source 1, Page 4].\n\n2. **Mac** - A line of personal computers based on the macOS operating system, which includes laptops like MacBook Air and MacBook Pro, as well as desktops such as iMac, Mac mini, Mac Studio, and Mac Pro [Source 3, Page 4].\n\n3. **iPad** - A line of multipurpose tablets based on the iPadOS operating system, including iPad Pro, iPad Air, iPad, and iPad mini [Source 3, Page 4].\n\n4. **Wearables, Home and Accessories** - This category includes smartwatches (Apple Watch Ultra 2, Apple Watch Series 10, Apple Watch SE), wireless headphones (AirPods, AirPods Pro, AirPods Max, and Beats products), and home devices like Apple TV and HomePod [Source 5, Page 4]. \n\nThese categories encompass a wide range of products and services offered by Apple.",
+      "keyword_hit": true,
+      "faithfulness": 0.2,
+      "relevance": 0.7197867393493652,
+      "tokens_used": 1302,
+      "sources": [
+        {
+          "page": 4,
+          "distance": 0.23990345001220703,
+          "text": "“Company” and “Apple” as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.\nPART I\nItem 1.    Business\nCompany Background\nThe Company designs, ma"
+        },
+        {
+          "page": 24,
+          "distance": 0.2764627933502197,
+          "text": "Operations” in Part II, Item 7 of the Company’s Annual Report on Form 10-K for the fiscal year ended September 30, 2023.\nProduct, Service and Software Announcements\nThe Company announces new product, "
+        },
+        {
+          "page": 4,
+          "distance": 0.28314918279647827,
+          "text": "and iPhone SE .\nMac\nMac  is the Company’s line of personal computers based on its macOS  operating system. The Mac line includes laptops MacBook Air  and MacBook Pro , as\nwell as desktops iMac , Mac m"
+        },
+        {
+          "page": 38,
+          "distance": 0.28700965642929077,
+          "text": "charged by the Company for similar offerings, market trends in the pricing for similar offerings, product-specific business objectives and the estimated cost to\nprovide the performance obligation.\nThe"
+        },
+        {
+          "page": 4,
+          "distance": 0.314541220664978,
+          "text": "includes Apple Watch Ultra  2, Apple Watch  Series 10 and Apple Watch SE . The Company’s line of wireless headphones includes AirPods , AirPods Pro ,\nAirPods Max  and Beats  products. Apple Vision Pro"
+        }
+      ]
+    },
+    {
+      "question": "In which countries does Apple have retail stores?",
+      "category": "factual",
+      "gold_answer": "Multiple countries including the U.S., with stores in 26 countries",
+      "predicted_answer": "The provided context does not contain specific information about the countries where Apple has retail stores. Therefore, I cannot provide an answer based on the available information.",
+      "keyword_hit": true,
+      "faithfulness": 1.0,
+      "relevance": 0.6606271147727967,
+      "tokens_used": 977,
+      "sources": [
+        {
+          "page": 5,
+          "distance": 0.30958402156829834,
+          "text": "and magazine service; and Apple TV+ , which offers exclusive original content and live sports.\nPayment Services\nThe Company offers payment services, including Apple Card , a co-branded credit card, an"
+        },
+        {
+          "page": 114,
+          "distance": 0.33620667457580566,
+          "text": "Apple Sales International Limited\nIreland\nApple South Asia (Thailand) Limited\nThailand\nApple Vietnam Limited Liability Company\nVietnam\nBraeburn Capital, Inc.\nNevada, U.S.\niTunes K.K.\nJapan\n*\nPursuant "
+        },
+        {
+          "page": 17,
+          "distance": 0.3466324210166931,
+          "text": "and regulatory requirements. The Company expects to make further business changes in the future. For example, in the U.S. the Company has implemented\nchanges to how developers communicate with consume"
+        },
+        {
+          "page": 114,
+          "distance": 0.3495290279388428,
+          "text": "Exhibit 21.1\nSubsidiaries of\nApple Inc.*\nJurisdiction\nof Incorporation\nApple Asia Limited\nHong Kong\nApple Asia LLC\nDelaware, U.S.\nApple Canada Inc.\nCanada\nApple Computer Trading (Shanghai) Co., Ltd.\nC"
+        },
+        {
+          "page": 4,
+          "distance": 0.35491228103637695,
+          "text": "“Company” and “Apple” as used herein refers collectively to Apple Inc. and its wholly owned subsidiaries, unless otherwise stated.\nPART I\nItem 1.    Business\nCompany Background\nThe Company designs, ma"
+        }
+      ]
+    },
+    {
+      "question": "What was iPhone revenue in 2024?",
+      "category": "numerical",
+      "gold_answer": "$201,183 million",
+      "predicted_answer": "iPhone revenue in 2024 was $201,183 million, which represented a relatively flat performance compared to the previous year, 2023, where it was $200,583 million [Source 1, Page 26].",
+      "keyword_hit": true,
+      "faithfulness": 0.5714285714285714,
+      "relevance": 0.7652697086334228,
+      "tokens_used": 1264,
+      "sources": [
+        {
+          "page": 26,
+          "distance": 0.2137279510498047,
+          "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+        },
+        {
+          "page": 26,
+          "distance": 0.23186302185058594,
+          "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+        },
+        {
+          "page": 39,
+          "distance": 0.2379758358001709,
+          "text": "The Company’s proportion of net sales by disaggregated revenue source was generally consistent for each reportable segment in Note 13, “Segment\nInformation and Geographic Data” for 2024, 2023 and 2022"
+        },
+        {
+          "page": 38,
+          "distance": 0.24380016326904297,
+          "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+        },
+        {
+          "page": 24,
+          "distance": 0.24628448486328125,
+          "text": "•\nApple Intelligence™, a personal intelligence system that uses generative models.\nFourth Quarter 2024:\n•\niPhone 16, iPhone 16 Plus, iPhone 16 Pro and iPhone 16 Pro Max;\n•\nApple Watch Series 10; and\n•"
+        }
+      ]
+    },
+    {
+      "question": "What was Services revenue in 2024?",
+      "category": "numerical",
+      "gold_answer": "$96,169 million",
+      "predicted_answer": "Services revenue in 2024 was $96,169 million, which represents a 13% increase compared to 2023's revenue of $85,200 million [Source 3, Page 26].",
+      "keyword_hit": true,
+      "faithfulness": 0.625,
+      "relevance": 0.7219270944595337,
+      "tokens_used": 1393,
+      "sources": [
+        {
+          "page": 27,
+          "distance": 0.267477810382843,
+          "text": "Products mix and the weakness in foreign currencies relative to the U.S. dollar.\nServices Gross Margin\nServices gross margin increased during 2024 compared to 2023 due primarily to higher Services net"
+        },
+        {
+          "page": 38,
+          "distance": 0.27403849363327026,
+          "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+        },
+        {
+          "page": 26,
+          "distance": 0.27862465381622314,
+          "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+        },
+        {
+          "page": 27,
+          "distance": 0.2846105694770813,
+          "text": "Operating Expenses\nOperating expenses for 2024, 2023 and 2022 were as follows (dollars in millions):\n2024\nChange\n2023\nChange\n2022\nResearch and development\n$\n31,370 \n5 %\n$\n29,915 \n14 %\n$\n26,251 \nPercen"
+        },
+        {
+          "page": 27,
+          "distance": 0.2856130003929138,
+          "text": "Gross Margin\nProducts and Services gross margin and gross margin percentage for 2024, 2023 and 2022 were as follows (dollars in millions):\n2024\n2023\n2022\nGross margin:\nProducts\n$\n109,633 \n$\n108,803 \n$"
+        }
+      ]
+    },
+    {
+      "question": "What credit rating does Apple have?",
+      "category": "factual",
+      "gold_answer": "AA+ from S&P / Aa1 from Moody's",
+      "predicted_answer": "The provided context does not contain any information regarding Apple Inc.'s credit rating. Therefore, I cannot answer your question based on the available data.",
+      "keyword_hit": true,
+      "faithfulness": 1.0,
+      "relevance": 0.7015554547309876,
+      "tokens_used": 806,
+      "sources": [
+        {
+          "page": 45,
+          "distance": 0.2923855185508728,
+          "text": "10.6 years, respectively. The discount rate related to the Company’s lease liabilities as of September 28, 2024 and September 30, 2023 was 3.1% and 3.0%,\nrespectively. The discount rates related to th"
+        },
+        {
+          "page": 23,
+          "distance": 0.2927451729774475,
+          "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+        },
+        {
+          "page": 46,
+          "distance": 0.29510849714279175,
+          "text": "hedging.\nThe future principal payments for the Company’s Notes as of September 28, 2024, are as follows (in millions):\n2025\n$\n10,930 \n2026\n12,342 \n2027\n9,936 \n2028\n7,800 \n2029\n5,153 \nThereafter\n51,180"
+        },
+        {
+          "page": 40,
+          "distance": 0.30310505628585815,
+          "text": "purchases, typically for up to 12 months.\n(1)\n(3)\nApple Inc. | 2024 Form 10-K | 37"
+        },
+        {
+          "page": 44,
+          "distance": 0.30887848138809204,
+          "text": "$\n22,038 \n$\n19,454 \n$\n16,758 \nThe Company is subject to taxation and files income tax returns in the U.S. federal jurisdiction and many state and foreign jurisdictions. Tax years after 2017 for\nthe U."
+        }
+      ]
+    }
+  ]
+}

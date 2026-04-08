@@ -1,0 +1,12 @@
+pymupdf==1.27.2
+langchain==1.2.14
+langchain-text-splitters==1.1.1
+langchain-community==0.4.1
+langchain-openai==0.3.12
+chromadb==1.0.0
+sentence-transformers==5.3.0
+streamlit==1.56.0
+fastapi==0.115.0
+uvicorn==0.42.0
+openai==2.30.0
+tiktoken==0.9.0

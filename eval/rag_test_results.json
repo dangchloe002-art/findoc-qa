@@ -1,0 +1,162 @@
+[
+  {
+    "question": "What was Apple's total net sales in fiscal year 2024?",
+    "answer": "Apple's total net sales in fiscal year 2024 were $391,035 million [Source 1, Page 38; Source 4, Page 32].",
+    "sources": [
+      {
+        "page": 38,
+        "distance": 0.15695005655288696,
+        "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+      },
+      {
+        "page": 26,
+        "distance": 0.1610490083694458,
+        "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+      },
+      {
+        "page": 26,
+        "distance": 0.17299884557724,
+        "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+      },
+      {
+        "page": 32,
+        "distance": 0.2007628083229065,
+        "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+      },
+      {
+        "page": 50,
+        "distance": 0.2200642228126526,
+        "text": "The following tables show net sales for 2024, 2023 and 2022 and long-lived assets as of September 28, 2024 and September 30, 2023 for countries that\nindividually accounted for 10% or more of the respe"
+      }
+    ],
+    "tokens_used": 1479
+  },
+  {
+    "question": "What are the top 3 risk factors Apple faces?",
+    "answer": "The top three risk factors Apple faces, as outlined in the 10-K filing, are:\n\n1. **Demand Fluctuations and Product Issues**: Apple could experience lower-than-anticipated demand for its products or services, issues with new product or service introductions, and potential failures in logistics, supply, or manufacturing partnerships [Source 1, Page 18].\n\n2. **Cybersecurity Risks**: The company is subject to cybersecurity-related risks, which are discussed in detail under the \"Risk Factors\" section of the filing [Source 2, Page 20].\n\n3. **Retail Operations Risks**: Apple's retail operations face numerous uncertainties, including macroeconomic factors affecting retail activity, management of costs related to store construction and operation, and challenges in maintaining relationships with retail partners [Source 5, Page 15].",
+    "sources": [
+      {
+        "page": 18,
+        "distance": 0.28925806283950806,
+        "text": "Company could also be subject to unexpected developments, such as lower-than-anticipated demand for the Company’s products or services, issues with new\nproduct or service introductions, information te"
+      },
+      {
+        "page": 20,
+        "distance": 0.28927046060562134,
+        "text": "as the Audit Committee deems appropriate.\nFor a discussion of the Company’s cybersecurity-related risks, see Item 1A of this Form 10-K under the heading “Risk Factors.”\nApple Inc. | 2024 Form 10-K | 1"
+      },
+      {
+        "page": 3,
+        "distance": 0.29088670015335083,
+        "text": "Apple Inc.\nForm 10-K\nFor the Fiscal Year Ended September 28, 2024\nTABLE OF CONTENTS\nPage\nPart I\nItem 1.\nBusiness\n1\nItem 1A.\nRisk Factors\n5\nItem 1B.\nUnresolved Staff Comments\n17\nItem 1C.\nCybersecurity\n"
+      },
+      {
+        "page": 8,
+        "distance": 0.3014811873435974,
+        "text": "its corporate website, www.apple.com, and its investor relations website, investor.apple.com. This includes press releases and other information about financial\nperformance, information on environment"
+      },
+      {
+        "page": 15,
+        "distance": 0.318325400352478,
+        "text": "The Company’s retail stores are subject to numerous risks and uncertainties.\nThe Company’s retail operations are subject to many factors that pose risks and uncertainties and could adversely impact th"
+      }
+    ],
+    "tokens_used": 968
+  },
+  {
+    "question": "How much did Apple spend on R&D in 2024 compared to 2023?",
+    "answer": "Apple spent $31,370 million on research and development (R&D) in 2024, which represents a 5% increase from the $29,915 million spent in 2023. The growth in R&D expense during 2024 was primarily driven by increases in headcount-related expenses [Source 1, Page 27].",
+    "sources": [
+      {
+        "page": 27,
+        "distance": 0.21273654699325562,
+        "text": "Operating Expenses\nOperating expenses for 2024, 2023 and 2022 were as follows (dollars in millions):\n2024\nChange\n2023\nChange\n2022\nResearch and development\n$\n31,370 \n5 %\n$\n29,915 \n14 %\n$\n26,251 \nPercen"
+      },
+      {
+        "page": 26,
+        "distance": 0.23512738943099976,
+        "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+      },
+      {
+        "page": 26,
+        "distance": 0.24516570568084717,
+        "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+      },
+      {
+        "page": 23,
+        "distance": 0.24670541286468506,
+        "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+      },
+      {
+        "page": 24,
+        "distance": 0.25340735912323,
+        "text": "2024 and 2022 spanned 52 weeks each, whereas fiscal year 2023 spanned 53 weeks.\nMacroeconomic Conditions\nMacroeconomic conditions, including inflation, interest rates and currency fluctuations, have d"
+      }
+    ],
+    "tokens_used": 1178
+  },
+  {
+    "question": "What was Apple's net income in 2024?",
+    "answer": "The provided context does not include specific information regarding Apple's net income for 2024. Therefore, I cannot provide an answer based on the available data.",
+    "sources": [
+      {
+        "page": 23,
+        "distance": 0.19462954998016357,
+        "text": "2023\nSeptember\n2024\nApple Inc.\n$\n100 \n$\n207 \n$\n273 \n$\n281 \n$\n322 \n$\n430 \nS&P 500 Index\n$\n100 \n$\n113 \n$\n156 \n$\n131 \n$\n155 \n$\n210 \nDow Jones U.S. Technology Supersector Index\n$\n100 \n$\n146 \n$\n216 \n$\n156 "
+      },
+      {
+        "page": 26,
+        "distance": 0.21440792083740234,
+        "text": "Products and Services Performance\nThe following table shows net sales by category for 2024, 2023 and 2022 (dollars in millions):\n2024\nChange\n2023\nChange\n2022\niPhone\n$\n201,183 \n— %\n$\n200,583 \n(2)%\n$\n20"
+      },
+      {
+        "page": 38,
+        "distance": 0.2166920304298401,
+        "text": "Mac\n29,984 \n29,357 \n40,177 \niPad\n26,694 \n28,300 \n29,292 \nWearables, Home and Accessories\n37,005 \n39,845 \n41,241 \nServices \n96,169 \n85,200 \n78,129 \nTotal net sales\n$\n391,035 \n$\n383,285 \n$\n394,328 \n(1)\n"
+      },
+      {
+        "page": 26,
+        "distance": 0.22160083055496216,
+        "text": "iPhone\niPhone net sales were relatively flat during 2024 compared to 2023.\nMac\nMac net sales increased during 2024 compared to 2023 due primarily to higher net sales of laptops.\niPad\niPad net sales de"
+      },
+      {
+        "page": 32,
+        "distance": 0.22514885663986206,
+        "text": "Apple Inc.\nCONSOLIDATED STATEMENTS OF OPERATIONS\n(In millions, except number of shares, which are reflected in thousands, and per-share amounts)\nYears ended\nSeptember 28,\n2024\nSeptember 30,\n2023\nSepte"
+      }
+    ],
+    "tokens_used": 1333
+  },
+  {
+    "question": "How does Apple describe its competition in the market?",
+    "answer": "Apple describes its competition in the market as highly competitive and characterized by several key factors. The company faces aggressive price competition, which exerts downward pressure on gross margins, and many competitors operate with very low cost structures. Additionally, competitors often imitate Apple's products and infringe on its intellectual property, which poses a significant challenge to maintaining a competitive advantage [Source 1, Page 5; Source 2, Page 10].\n\nApple also notes that it has a minority market share in the global smartphone, personal computer, and tablet markets, facing substantial competition from companies with significant technical, marketing, and distribution resources. These competitors often have broader product lines, lower-priced products, and larger installed customer bases [Source 2, Page 10]. The competition is further intensified by the rapid introduction of new products, short product life cycles, and evolving industry standards [Source 3, Page 5; Source 5, Page 10].",
+    "sources": [
+      {
+        "page": 5,
+        "distance": 0.21235495805740356,
+        "text": "businesses. Many of the Company’s competitors seek to compete primarily through aggressive pricing and very low cost structures, and by imitating the\nCompany’s products and infringing on its intellect"
+      },
+      {
+        "page": 10,
+        "distance": 0.25310689210891724,
+        "text": "country in which the Company operates. If the Company is unable to continue to develop and sell innovative new products with attractive margins or if\ncompetitors infringe on the Company’s intellectual"
+      },
+      {
+        "page": 5,
+        "distance": 0.2689107656478882,
+        "text": "the Company’s net sales through its direct and indirect distribution channels accounted for 38% and 62%, respectively, of total net sales.\nCompetition\nThe markets for the Company’s products and servic"
+      },
+      {
+        "page": 38,
+        "distance": 0.2726353406906128,
+        "text": "charged by the Company for similar offerings, market trends in the pricing for similar offerings, product-specific business objectives and the estimated cost to\nprovide the performance obligation.\nThe"
+      },
+      {
+        "page": 10,
+        "distance": 0.27398812770843506,
+        "text": "Additionally, the Company faces significant competition as competitors imitate the Company’s product features and applications within their products or\ncollaborate to offer solutions that are more com"
+      }
+    ],
+    "tokens_used": 951
+  }
+]
