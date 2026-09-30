@@ -1,6 +1,7 @@
 """
 FinDoc QA — Streamlit Demo
 """
+import os
 import streamlit as st
 import json
 import math
@@ -11,24 +12,38 @@ from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+import opensearch_store as oss
+from metadata import EXHIBIT_DOCS, TENK_ITEMS
+
 # ============================================================
 # 配置
 # ============================================================
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 PERSIST_DIR = "data/chroma_db"
 CHUNKS_PATH = "data/chunks.json"
+OPENSEARCH_HOST = os.environ.get("OPENSEARCH_HOST", "localhost")
+OPENSEARCH_PORT = int(os.environ.get("OPENSEARCH_PORT", "9200"))
 
 # ============================================================
 # 缓存加载资源（只加载一次）
 # ============================================================
 @st.cache_resource
-def load_resources():
-    embed_model = SentenceTransformer("BAAI/bge-small-en-v1.5")
+def load_embed_model():
+    return SentenceTransformer("BAAI/bge-small-en-v1.5")
+
+@st.cache_resource
+def load_chroma():
     client = chromadb.PersistentClient(path=PERSIST_DIR)
     collection = client.get_collection("findoc")
     with open(CHUNKS_PATH, encoding="utf-8") as f:
         chunks = json.load(f)
-    return embed_model, collection, chunks
+    return collection, chunks
+
+@st.cache_resource
+def load_opensearch():
+    client = oss.get_client(OPENSEARCH_HOST, OPENSEARCH_PORT)
+    indices = sorted(client.indices.get(index=f"{oss.DEFAULT_INDEX}-*").keys())
+    return client, indices
 
 # ============================================================
 # BM25
@@ -138,21 +153,49 @@ st.set_page_config(page_title="FinDoc QA", page_icon="📄", layout="wide")
 st.title("📄 FinDoc QA")
 st.caption("Financial Document Question Answering — Apple 10-K (FY2024)")
 
-# 加载资源
-embed_model, collection, chunks = load_resources()
-bm25 = build_bm25(chunks)
+# Load shared resources
+embed_model = load_embed_model()
 
-# 侧边栏配置
+# Sidebar settings
 with st.sidebar:
     st.header("⚙️ Settings")
-    search_mode = st.radio("Search Mode", ["Hybrid (BM25 + Dense)", "Dense Only"])
+    backend = st.radio("Retrieval Backend", ["OpenSearch", "ChromaDB (original)"])
     top_k = st.slider("Top-K Results", 3, 10, 5)
-    if search_mode == "Hybrid (BM25 + Dense)":
-        dense_weight = st.slider("Dense Weight", 0.3, 0.9, 0.6, 0.1)
+
+    if backend == "OpenSearch":
+        try:
+            os_client, os_indices = load_opensearch()
+        except Exception as e:
+            st.error(f"Cannot reach OpenSearch at {OPENSEARCH_HOST}:{OPENSEARCH_PORT}. "
+                     f"Run `docker compose up -d` and `python build_opensearch_index.py`.\n\n{e}")
+            st.stop()
+        if not os_indices:
+            st.error("No findoc-* index found. Run `python build_opensearch_index.py` first.")
+            st.stop()
+        os_index = st.selectbox("Index", os_indices, index=len(os_indices) - 1)
+        search_mode = st.radio("Search Mode", ["Hybrid (BM25 + Dense)", "Dense Only", "BM25 Only"])
+        dense_weight = 0.6
+        if search_mode == "Hybrid (BM25 + Dense)":
+            dense_weight = st.slider("Dense Weight", 0.3, 0.9, 0.6, 0.1)
+        st.subheader("Metadata Filters")
+        exclude_exhibits = st.checkbox("Exclude attached exhibit documents", value=True)
+        section_names = [TENK_ITEMS[k] for k in TENK_ITEMS]
+        sections = st.multiselect("Only these 10-K sections", section_names)
+        tables_only = st.checkbox("Only pages with tables", value=False)
+    else:
+        collection, chunks = load_chroma()
+        bm25 = build_bm25(chunks)
+        search_mode = st.radio("Search Mode", ["Hybrid (BM25 + Dense)", "Dense Only"])
+        if search_mode == "Hybrid (BM25 + Dense)":
+            dense_weight = st.slider("Dense Weight", 0.3, 0.9, 0.6, 0.1)
 
     st.divider()
     st.header("📊 System Info")
-    st.write(f"**Chunks:** {collection.count()}")
+    if backend == "OpenSearch":
+        st.write(f"**Chunks:** {os_client.count(index=os_index)['count']}")
+    else:
+        st.write(f"**Chunks:** {collection.count()}")
+    st.write(f"**Backend:** {backend}")
     st.write(f"**Embedding:** BGE-small-en-v1.5")
     st.write(f"**LLM:** GPT-4o-mini")
 
@@ -176,12 +219,25 @@ question = st.text_input("Ask a question about Apple's 10-K filing:",
 
 if question:
     with st.spinner("🔍 Searching and generating answer..."):
-        # 检索
-        if search_mode == "Hybrid (BM25 + Dense)":
+        # Retrieval
+        if backend == "OpenSearch":
+            mode = {"Hybrid (BM25 + Dense)": "hybrid", "Dense Only": "dense",
+                    "BM25 Only": "bm25"}[search_mode]
+            filters = oss.metadata_filter(
+                sections=sections or None,
+                exclude_sections=[EXHIBIT_DOCS] if exclude_exhibits else None,
+                has_table=True if tables_only else None)
+            results = oss.search(os_client, question, embed_model, mode=mode, top_k=top_k,
+                                 dense_weight=dense_weight, index=os_index, filters=filters)
+        elif search_mode == "Hybrid (BM25 + Dense)":
             results = hybrid_search(question, collection, embed_model, bm25, chunks,
                                     top_k=top_k, dense_weight=dense_weight)
         else:
             results = dense_search(question, collection, embed_model, top_k=top_k)
+
+        if not results["ids"][0]:
+            st.warning("No chunks matched. Try relaxing the metadata filters.")
+            st.stop()
 
         # 生成
         answer, metas, distances, tokens = rag_answer(question, results)
@@ -201,6 +257,7 @@ if question:
         for i, (doc, meta, dist) in enumerate(
             zip(results["documents"][0], metas, distances)
         ):
-            st.markdown(f"**[Source {i+1}] Page {meta['page_num']}** (relevance: {1-dist:.2f})")
+            section = f" · {meta['section']}" if meta.get("section") else ""
+            st.markdown(f"**[Source {i+1}] Page {meta['page_num']}{section}** (relevance: {1-dist:.2f})")
             st.text(doc[:500])
             st.divider()
