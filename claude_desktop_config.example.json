@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "findoc-qa": {
+      "command": "/Users/YOUR_NAME/miniconda3/envs/findoc/bin/python",
+      "args": ["/Users/YOUR_NAME/findoc-qa/mcp_server.py"],
+      "env": {
+        "FINDOC_INDEX": "findoc-c1200",
+        "OPENSEARCH_HOST": "localhost",
+        "OPENSEARCH_PORT": "9200"
+      }
+    }
+  }
+}

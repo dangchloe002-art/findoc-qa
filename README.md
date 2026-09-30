@@ -56,12 +56,49 @@ User Question → hybrid query [BM25 + k-NN] → normalization pipeline (min-max
 
 ### OpenSearch results
 
-Run `python run_opensearch_eval.py --build --llm` to fill this table. The script writes all numbers to `eval/opensearch_eval.json`.
+End-to-end accuracy on the 12-question test set (gpt-4o-mini, top_k=5). Full results for all 32 configurations are in `eval/opensearch_eval.json`.
 
-| Index | Filter | Mode | Dense weight | Context hit rate | Accuracy (LLM) | Faithfulness | Latency (ms) |
-|---|---|---|---|---|---|---|---|
-| findoc-c1200 | none | hybrid | 0.6 | – | – | – | – |
-| findoc-c1200 | no_exhibits | hybrid | 0.6 | – | – | – | – |
+| Chunk size | BM25 | Dense (k-NN) | Hybrid (w = 0.3 … 0.9) |
+|---|---|---|---|
+| 800 | 83.3% | 83.3% | **91.7%** at every weight |
+| 1200 | 66.7% | 83.3% | **100.0%** at every weight |
+
+| Filter (chunk 1200, hybrid) | Accuracy | Context hit rate | Search latency |
+|---|---|---|---|
+| none | 100.0% | 100.0% | ~20–28 ms |
+| exclude attached exhibits | 91.7% | 91.7% | ~20–28 ms |
+
+**Findings**
+- **Hybrid wins at both chunk sizes.** BM25 is stronger at chunk 800 and dense is stronger at chunk 1200, but the hybrid query beats both in every setting. The two signals are complementary.
+- **Weight robustness.** With the original client-side fusion, accuracy fell to 75% for dense_weight ≤ 0.5 (chunk 800). With OpenSearch, every weight from 0.3 to 0.9 gives the same accuracy. The normalization pipeline min-max normalizes *both* score lists, while the original code only normalized BM25 and mixed it with raw cosine similarity.
+- **Section metadata is accurate.** Numerical questions retrieve MD&A and Financial Statements chunks; headcount and product questions retrieve Business chunks.
+- **Hard filters can hurt.** Excluding the attached exhibits (about half of all chunks) costs exactly one question at every setting: "Who is Apple's CEO?". The body of the 10-K does not name the CEO outside the signature page, while the exhibit certifications (Exhibits 31/32) do. Down-weighting exhibits instead of removing them is the natural next experiment.
+- **Caveat.** The test set has 12 questions, so one question equals 8.3 points. The consistent patterns above matter more than any single gap.
+
+## MCP Server
+
+`mcp_server.py` exposes the OpenSearch index as [Model Context Protocol](https://modelcontextprotocol.io) tools, so an AI agent such as Claude Desktop can search the filing and cite exact chunks. The server only retrieves; the agent reasons over the results and writes the answer.
+
+| Tool | What it does |
+|---|---|
+| `search_filing` | BM25 / dense / hybrid search with filters for 10-K section, table pages, and exhibits. Returns chunks with `citation` ("p.38, Financial Statements …") and scores. |
+| `get_chunk` | Full text and metadata of one chunk by id, for verifying a citation. |
+| `get_page` | Every chunk on a page in reading order, for reading around a hit. |
+| `list_sections` | 10-K sections in the index with Item number, chunk count, and page range, so the agent knows which filters exist. |
+
+Design notes:
+- Tool logic (`FinDocTools`) is separate from the MCP wiring, so it is unit-tested with a fake OpenSearch client.
+- Invalid input returns a structured error instead of raising; an unknown section name returns the list of valid names, so the agent can retry on its own.
+- The embedding model loads on the first dense or hybrid call; BM25 calls never load it.
+- Logging goes to stderr because stdout carries the MCP protocol.
+
+```bash
+# Test without Claude Desktop: start the server over stdio and call every tool
+python mcp_client_demo.py "What was Apple's net income in 2024?"
+```
+
+To use it in Claude Desktop, copy the `findoc-qa` entry from `claude_desktop_config.example.json` into
+`~/Library/Application Support/Claude/claude_desktop_config.json`, replace the two paths (`which python` inside the `findoc` conda env gives the first one), and restart Claude Desktop. OpenSearch must be running.
 
 ## Tech Stack
 
@@ -72,6 +109,7 @@ Run `python run_opensearch_eval.py --build --llm` to fill this table. The script
 - **Search Engine:** OpenSearch 2.17 — BM25 + k-NN (HNSW, Lucene engine) + native hybrid query (`opensearch_store.py`)
 - **Vector Store (original):** ChromaDB (cosine similarity)
 - **Sparse Retrieval (original):** BM25 (custom implementation)
+- **Agent Interface:** MCP server (FastMCP, stdio transport) with four retrieval tools
 - **LLM:** OpenAI GPT-4o-mini
 - **Frontend:** Streamlit
 - **Evaluation:** Custom pipeline (keyword accuracy, faithfulness, relevance)
@@ -127,6 +165,9 @@ findoc-qa/
 ├── build_opensearch_index.py  # Chunk → enrich → embed → index
 ├── run_opensearch_eval.py     # Retrieval + end-to-end evaluation on OpenSearch
 ├── eval_data.py          # Shared 12-question ground truth and metrics
+├── mcp_server.py         # MCP server: search_filing, get_chunk, get_page, list_sections
+├── mcp_client_demo.py    # Stdio MCP client that calls every tool (no Claude Desktop needed)
+├── claude_desktop_config.example.json
 ├── docker-compose.yml    # Single-node OpenSearch for local development
 ├── tests/                # Unit tests with a fake OpenSearch client
 ├── run_ablation.py       # Ablation experiments (chunk_size × top_k)
