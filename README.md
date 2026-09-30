@@ -75,6 +75,31 @@ End-to-end accuracy on the 12-question test set (gpt-4o-mini, top_k=5). Full res
 - **Hard filters can hurt.** Excluding the attached exhibits (about half of all chunks) costs exactly one question at every setting: "Who is Apple's CEO?". The body of the 10-K does not name the CEO outside the signature page, while the exhibit certifications (Exhibits 31/32) do. Down-weighting exhibits instead of removing them is the natural next experiment.
 - **Caveat.** The test set has 12 questions, so one question equals 8.3 points. The consistent patterns above matter more than any single gap.
 
+## MCP Server
+
+`mcp_server.py` exposes the OpenSearch index as [Model Context Protocol](https://modelcontextprotocol.io) tools, so an AI agent such as Claude Desktop can search the filing and cite exact chunks. The server only retrieves; the agent reasons over the results and writes the answer.
+
+| Tool | What it does |
+|---|---|
+| `search_filing` | BM25 / dense / hybrid search with filters for 10-K section, table pages, and exhibits. Returns chunks with `citation` ("p.38, Financial Statements …") and scores. |
+| `get_chunk` | Full text and metadata of one chunk by id, for verifying a citation. |
+| `get_page` | Every chunk on a page in reading order, for reading around a hit. |
+| `list_sections` | 10-K sections in the index with Item number, chunk count, and page range, so the agent knows which filters exist. |
+
+Design notes:
+- Tool logic (`FinDocTools`) is separate from the MCP wiring, so it is unit-tested with a fake OpenSearch client.
+- Invalid input returns a structured error instead of raising; an unknown section name returns the list of valid names, so the agent can retry on its own.
+- The embedding model loads on the first dense or hybrid call; BM25 calls never load it.
+- Logging goes to stderr because stdout carries the MCP protocol.
+
+```bash
+# Test without Claude Desktop: start the server over stdio and call every tool
+python mcp_client_demo.py "What was Apple's net income in 2024?"
+```
+
+To use it in Claude Desktop, copy the `findoc-qa` entry from `claude_desktop_config.example.json` into
+`~/Library/Application Support/Claude/claude_desktop_config.json`, replace the two paths (`which python` inside the `findoc` conda env gives the first one), and restart Claude Desktop. OpenSearch must be running.
+
 ## Tech Stack
 
 - **Document Parsing:** PyMuPDF (text extraction + table detection)
@@ -84,6 +109,7 @@ End-to-end accuracy on the 12-question test set (gpt-4o-mini, top_k=5). Full res
 - **Search Engine:** OpenSearch 2.17 — BM25 + k-NN (HNSW, Lucene engine) + native hybrid query (`opensearch_store.py`)
 - **Vector Store (original):** ChromaDB (cosine similarity)
 - **Sparse Retrieval (original):** BM25 (custom implementation)
+- **Agent Interface:** MCP server (FastMCP, stdio transport) with four retrieval tools
 - **LLM:** OpenAI GPT-4o-mini
 - **Frontend:** Streamlit
 - **Evaluation:** Custom pipeline (keyword accuracy, faithfulness, relevance)
@@ -139,6 +165,9 @@ findoc-qa/
 ├── build_opensearch_index.py  # Chunk → enrich → embed → index
 ├── run_opensearch_eval.py     # Retrieval + end-to-end evaluation on OpenSearch
 ├── eval_data.py          # Shared 12-question ground truth and metrics
+├── mcp_server.py         # MCP server: search_filing, get_chunk, get_page, list_sections
+├── mcp_client_demo.py    # Stdio MCP client that calls every tool (no Claude Desktop needed)
+├── claude_desktop_config.example.json
 ├── docker-compose.yml    # Single-node OpenSearch for local development
 ├── tests/                # Unit tests with a fake OpenSearch client
 ├── run_ablation.py       # Ablation experiments (chunk_size × top_k)

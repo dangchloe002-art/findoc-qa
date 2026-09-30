@@ -7,3 +7,4 @@ streamlit>=1.35
 openai>=1.40
 numpy>=1.26
 opensearch-py>=2.6,<3
+mcp>=1.2
